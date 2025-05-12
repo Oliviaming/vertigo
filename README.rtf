@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww12520\viewh19000\viewkind1
+\deftab720
+\pard\tx9360\tx9360\tx9360\pardeftab720\sl278\slmult1\sa160\partightenfactor0
+
+\f0\fs24 \cf0 The shared file contains a dataset representative of a typical experiment conducted using microwave sensors for the scope of calibrating the sensor and analyzing correlations.
+\f1 \
+\pard\pardeftab720\ri0\sl278\slmult1\sa160\partightenfactor0
+
+\f0 \cf0 For convenience, the file is a CSV fille, with comma used as separator.\
+The dataset contains spectra acquired with the sensor, the temperature at which the sensor was operating at the time of the measurement, as well as values of relevant fruit attributes measured destructively (brix, TA, firmness) and metadata (date, size, weight, cultivar, number of the experiment, fruit identifier within the experiment).\
+The experiments have been conducted by trained and untrained personnel, with the same sensor, along approximately 2 months, on fruits from 3 different cultivars that for convenience have been anonymized.\
+The assignment is to analyze the correlations between the spectra and the quality attributes (Brix, TA, Firmness (kg)), taking care of properly pre-treating the dataset if needed. Then you will have to train prediction models and properly validate them. You are free to use any information and feature contained in the dataset for the analysis, and analyze all trends that you believe are relevant, but the models need to use exclusively the sensor data to predict the quality attributes. You can use feature augmentation as far as you use only the spectra as starting feature. You can use any technique you deem appropriate, as far as you are able to explain your choice and its impact.
+\f1 \
+
+\f0 Here is the structure of the dataset:\
+\pard\pardeftab720\li720\fi-360\ri0\sl278\slmult1\sa160\partightenfactor0
+\ls1\ilvl0\cf0 -	First row is headers;
+\f1 \
+\ls1\ilvl0
+\f0 -	All other rows represent single spectral measurements;\
+-	The first 112 columns are related with the acquired spectrum, which is a microwave reflection coefficient acquired in the frequency range between 250 MHz and 14 GHz. The reflection coefficient is a complex number, and it is acquired at 56 equally spaced frequency points. So the first 56 columns are related to the real part, the second set of 56 column are the imaginary parts;\
+-	Column 113 (sensorT) is the sensor temperature\
+-	Column 114 (TestDate) is the date in which the measurement is performed\
+-	Column 115 (Experiment) is the experiment number as identified by the user\
+-	Column 116 (Cultivar) is the cultivar (i.e., variety) associated with the measured fruit. It has been anonymized for convenience, but keep in mind all fruits are of the same type, while there are 3 different varieties employed.\
+-	Column 117 (Fruit nr) is the fruit identifier within the single experiment. Note that the number can repeat. This is because the user made multiple spectral measurement for each fruit. This means, for instance, that fruit 1 of experiment 1 has two spectral measurements. The associated fruit nr for those 2 spectra will be the same, as well as the other attributes.\
+-	Column 118 (Size) relates to the size of the fruit with a user-specific metric\
+-	Column 119 (Weight) is the weight of the fruit in grams\
+-	Column 120 (Brix) is the brix content of the fruit analyzed using a brix refractometer\
+-	Column 121 (TA) is the titratable acidity of the fruit, measured using a specific titration process applied on the fruit juice\
+-	Column 122 (Firmness (kg) ) is the firmness of the fruit, measured using a fruit texture analyzer\
+\pard\pardeftab720\ri0\sl278\slmult1\sa160\partightenfactor0
+\cf0 Please not again that each fruit has been measured multiple times (2) with the microwave sensor. While practically there has been only one destructive set of measurements for each fruit, for convenience and consistency the destructive measurements appear as repeated, so that there is one set of destructive measurements and metadata for each spectrum.  
+\f1 \
+}
